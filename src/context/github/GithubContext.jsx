@@ -9,11 +9,12 @@ const apiURL = process.env.REACT_APP_GITHUB_URL
 export const GithubProvider = ({ children }) => {
   const initialState = {
     users: [],
-    loading: true
+    loading: false
   }
 
   const [state, dispatch] = useReducer(githubReducer, initialState)
 
+  // Get Initial users (testing purposes)
   const fetchUsers = async () => {
       setLoading()
     const response = await fetch(`${apiURL}/users`, {
