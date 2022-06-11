@@ -23,4 +23,9 @@
   * If omitted, Tailwind will append these classes to the very end of
   * your stylesheet by default.
   */
- @tailwind variants
+ @tailwind variants;
+
+ .custom-card-image .card.image-full:before {
+     border-radius: 0.5rem;
+     opacity: 0.35;
+ }
