@@ -6,10 +6,14 @@ function UserResults () {
   }, [])
 
   const fetchUsers = async () => {
-    const response = await fetch(`${process.env.REACT_APP_GITHUB_URL}/users`,
+    const apiKey = process.env.REACT_APP_GITHUB_TOKEN
+    const apiURL = process.env.REACT_APP_GITHUB_URL
+    console.log(apiKey);
+    console.log(apiURL);
+    const response = await fetch(`${apiURL}/users`,
     {
       headers: {
-        Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`
+        Authorization: `token ${apiKey}`
       }
     })
 
