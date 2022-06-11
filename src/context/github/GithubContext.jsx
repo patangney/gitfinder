@@ -9,6 +9,7 @@ const apiURL = process.env.REACT_APP_GITHUB_URL
 export const GithubProvider = ({ children }) => {
   const initialState = {
     users: [],
+    user: {},
     loading: false
   }
 
