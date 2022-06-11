@@ -10,6 +10,7 @@ function UserResults () {
   useEffect(() => {
     fetchUsers()
   }, [])
+
  
  if(!loading) {
     return (
