@@ -5,7 +5,7 @@ import GitHubContext from '../../context/github/GithubContext'
 
 function UserResults () { 
     //pull out what we need from useContext
-    const {users, loading, fetchUsers} = useContext(GitHubContext)
+    const {users, loading} = useContext(GitHubContext)
 
     // testing purposes for pulling back all users
 //   useEffect(() => {
