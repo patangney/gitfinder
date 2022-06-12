@@ -23,7 +23,7 @@ function User () {
     }
     getUserData()
   
-  }, [])
+  }, [dispatch, params.login])
 
   const {
     name,
