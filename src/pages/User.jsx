@@ -1,6 +1,7 @@
 import { FaCodepen, FaStore, FaUserFriends, FaUsers } from 'react-icons/fa'
 import { useEffect, useContext } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import RepoList from '../components/repos/RepoList'
 import GitHubContext from '../context/github/GithubContext'
 import Spinner from './../components/layout/Spinner'
 
@@ -11,7 +12,7 @@ function User () {
   const params = useParams()
   useEffect(() => {
     getSingleUser(params.login)
-    // getUserRepos(params.login)
+    getUserRepos(params.login)
   }, [])
 
   const {
@@ -39,17 +40,9 @@ function User () {
 
   const websiteUrl = blog?.startsWith('http') ? blog : 'https://' + blog
 
-  // NOTE: code here has been fixed so that stats no longer show scroll bar on
-  // mobile / small devices
-  // https://www.udemy.com/course/react-front-to-back-2022/learn/lecture/29768968#questions/16902278
-
-  // NOTE: if you are having problems with the name and login showing at the top
-  // of the image then you need the className='flex-grow-0' on the <p> tag
-  // default styling on <p> in daisyUI now has flex-grow-1
-
   return (
     <>
-      <div className='w-full mx-auto lg:w-10/12'>
+      <div className='w-full  mx-auto lg:w-10/12'>
         <div className='mb-4'>
           <Link to='/' className='btn btn-ghost'>
             Back To Search
@@ -58,7 +51,7 @@ function User () {
 
         <div className='grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-3 mb-8 md:gap-8'>
           <div className='custom-card-image mb-6 md:mb-0'>
-            <div className='rounded-lg shadow-xl card image-full'>
+            <div className='rounded-lg shadow-xl card '>
               <figure>
                 <img src={avatar_url} alt='' />
               </figure>
@@ -173,7 +166,7 @@ function User () {
           </div>
         </div>
 
-        {/* <RepoList repos={repos} /> */}
+        <RepoList repos={repos} />
       </div>
     </>
   )
