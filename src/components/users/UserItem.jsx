@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 function UserItem({ user: { login, avatar_url } }) {
+  // NOTE: check for valid url to users website
   return (
     <div className='card shadow-md compact side bg-base-300'>
       <div className='flex-row items-center space-x-4 card-body'>
