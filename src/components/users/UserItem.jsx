@@ -24,7 +24,7 @@ function UserItem({ user: { login, avatar_url } }) {
         </div>
       </div>
     </div>
-  )
+  ) // NOTE: check for valid url to users website
 }
 
 UserItem.propTypes = {
